@@ -29,7 +29,7 @@ Dependencies: React >= 0.13.0
 Assuming you use something like [react-router](https://github.com/rackt/react-router):
 
 ```javascript
-var App = React.createClass({
+var App = createReactClass({
   render: function () {
     // Use "My Web App" if no child overrides this
     return (
@@ -40,7 +40,7 @@ var App = React.createClass({
   }
 });
 
-var HomePage = React.createClass({
+var HomePage = createReactClass({
   render: function () {
     // Use "Home" while this component is mounted
     return (
@@ -51,7 +51,7 @@ var HomePage = React.createClass({
   }
 });
 
-var NewArticlePage = React.createClass({
+var NewArticlePage = createReactClass({
   mixins: [LinkStateMixin],
 
   render: function () {

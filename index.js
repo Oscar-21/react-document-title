@@ -2,6 +2,8 @@
 
 var React = require('react'),
     withSideEffect = require('react-side-effect');
+var PropTypes = require('prop-types'); // ES5 with npm
+var createReactClass = require('create-react-class');
 
 function reducePropsToState(propsList) {
   var innermostProps = propsList[propsList.length - 1];
@@ -17,11 +19,11 @@ function handleStateChangeOnClient(title) {
   }
 }
 
-var DocumentTitle = React.createClass({
+var DocumentTitle = createReactClass({
   displayName: 'DocumentTitle',
 
   propTypes: {
-    title: React.PropTypes.string.isRequired
+    title: PropTypes.string.isRequired
   },
 
   render: function render() {

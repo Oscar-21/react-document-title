@@ -27,7 +27,7 @@ describe('DocumentTitle (in a browser)', function () {
   });
   it('changes the document title on mount', function (done) {
     var title = 'hello world';
-    var Component = React.createClass({
+    var Component = createReactClass({
       componentDidMount: function () {
         expect(global.document.title).to.equal(title);
         done();
@@ -41,7 +41,7 @@ describe('DocumentTitle (in a browser)', function () {
   it('supports nesting', function (done) {
     var called = false;
     var title = 'hello world';
-    var Component1 = React.createClass({
+    var Component1 = createReactClass({
       componentDidMount: function () {
         setTimeout(function () {
           expect(called).to.be(true);
@@ -53,7 +53,7 @@ describe('DocumentTitle (in a browser)', function () {
         return React.createElement(DocumentTitle, {title: title});
       }
     });
-    var Component2 = React.createClass({
+    var Component2 = createReactClass({
       componentDidMount: function () {
         called = true;
       },
